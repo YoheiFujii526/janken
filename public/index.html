@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>じゃんけんゲーム</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.css" 
+      rel="stylesheet" crossorigin="anonymous">
+</head>
+<body>
+    <h1>じゃんけんゲーム</h1>
+    <h3 id="name"></h3>
+    <div id="register_login" style="display: block;">
+        <input id="username" placeholder="名前を入力">
+        <input id="pass" placeholder="パスワードを入力">
+        <button id="registerBtn">登録</button>
+        <button id="loginBtn">ログイン</button>
+    </div>
+
+
+    <button id="profileBtn" style="display: none;">プロフィール</button>
+    <table id="profile"  class="table" style="display: none;">
+        <tbody id="tbody" border="1">
+        </tbody>
+    </table>
+
+    <button id="startBtn"  style="display: none;">ゲームスタート</button>
+    <div id="standby" style="display: none;">対戦相手を探しています...</div>
+
+    <div id="opponent"></div>
+    <div id="game" style="display: none;">
+        <h4>自分の出す手を選んでください</h4>
+        <input class="choiceImg" width="50" height="50" type="image" data-choice="rock" src="/images/r.png">
+        <input class="choiceImg" width="50" height="50" type="image" data-choice="scissor" src="/images/s.png">
+        <input class="choiceImg" width="50" height="50" type="image" data-choice="paper" src="/images/p.png">
+    </div>
+    <div id="select"></div>
+    <div id="per" class="nav d-flex justify-content-between" style="width: 300px;background-color: #eee;">
+        <div id="per1"></div>
+        <div id="per2"></div>
+    </div>
+    <div id="result"></div>
+    <div id="restart" style="display: none;">
+        <button id="restartBtn">もう一度Playする</button>
+        <button id="endBtn">終了する</button>
+    </div>
+
+    <script src="/socket.io/socket.io.js"></script>
+    <script src="/javascripts/app.js"></script>
+</body>
+</html>

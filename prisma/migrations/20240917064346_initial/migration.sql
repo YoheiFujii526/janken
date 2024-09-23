@@ -1,0 +1,18 @@
+-- CreateTable
+CREATE TABLE "User" (
+    "id" INTEGER NOT NULL PRIMARY KEY AUTOINCREMENT,
+    "name" TEXT NOT NULL,
+    "pass" TEXT NOT NULL,
+    "win" INTEGER NOT NULL DEFAULT 0,
+    "lose" INTEGER NOT NULL DEFAULT 0,
+    "draw" INTEGER NOT NULL DEFAULT 0,
+    "battle" INTEGER NOT NULL DEFAULT 0,
+    "rock" INTEGER NOT NULL DEFAULT 0,
+    "scissor" INTEGER NOT NULL DEFAULT 0,
+    "paper" INTEGER NOT NULL DEFAULT 0,
+    "createdAt" DATETIME NOT NULL DEFAULT CURRENT_TIMESTAMP,
+    "updatedAt" DATETIME NOT NULL
+);
+
+-- CreateIndex
+CREATE UNIQUE INDEX "User_name_key" ON "User"("name");
